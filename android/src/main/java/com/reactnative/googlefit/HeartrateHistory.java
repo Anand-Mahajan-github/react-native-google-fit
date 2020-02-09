@@ -71,9 +71,10 @@ public class HeartrateHistory {
                 .setTimeRange(startTime, endTime, TimeUnit.MILLISECONDS);
         if (this.dataType == HealthDataTypes.TYPE_BLOOD_PRESSURE) {
             readRequestBuilder.bucketByTime(1, TimeUnit.DAYS);
-        } else {
-            readRequestBuilder.setLimit(5); // need only one height, since it's unchangable
         }
+        // else {
+        //     readRequestBuilder.setLimit(5); // need only one height, since it's unchangable
+        // }
 
         DataReadRequest readRequest = readRequestBuilder.build();
 
